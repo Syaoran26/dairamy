@@ -129,6 +129,10 @@
 
 @layer utilities {
   .container {
-    @apply max-w-[1400px];
+    @apply max-w-7xl;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-br from-orange-500 via-orange-300 to-orange-400 bg-clip-text text-transparent;
   }
 }

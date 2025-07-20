@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import { Nunito } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import './globals.css';
 import { ClerkProvider } from '@clerk/nextjs';
 import { viVN } from '@clerk/localizations';
-const nunito = Nunito({ subsets: ['latin', 'vietnamese'] });
+const inter = Inter({ subsets: ['latin', 'vietnamese'] });
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <ClerkProvider localization={viVN}>
       <html lang="en" className="mdl-js">
-        <body className={`${nunito.className}`} cz-shortcut-listen="true">
+        <body className={`${inter.className}`} cz-shortcut-listen="true">
           {children}
         </body>
       </html>
