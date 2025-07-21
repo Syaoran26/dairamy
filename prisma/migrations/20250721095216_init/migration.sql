@@ -1,6 +1,6 @@
 -- CreateTable
 CREATE TABLE "User" (
-    "id" TEXT NOT NULL,
+    "id" UUID NOT NULL,
     "clerkUserId" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "name" TEXT NOT NULL,
@@ -13,8 +13,8 @@ CREATE TABLE "User" (
 
 -- CreateTable
 CREATE TABLE "Collection" (
-    "id" TEXT NOT NULL,
-    "userId" TEXT NOT NULL,
+    "id" UUID NOT NULL,
+    "userId" UUID NOT NULL,
     "name" TEXT NOT NULL,
     "description" TEXT,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -25,9 +25,9 @@ CREATE TABLE "Collection" (
 
 -- CreateTable
 CREATE TABLE "Entry" (
-    "id" TEXT NOT NULL,
-    "collectionId" TEXT,
-    "userId" TEXT NOT NULL,
+    "id" UUID NOT NULL,
+    "collectionId" UUID,
+    "userId" UUID NOT NULL,
     "title" TEXT NOT NULL,
     "content" TEXT NOT NULL,
     "mood" TEXT NOT NULL,
@@ -41,8 +41,8 @@ CREATE TABLE "Entry" (
 
 -- CreateTable
 CREATE TABLE "Draft" (
-    "id" TEXT NOT NULL,
-    "userId" TEXT NOT NULL,
+    "id" UUID NOT NULL,
+    "userId" UUID NOT NULL,
     "title" TEXT NOT NULL,
     "content" TEXT NOT NULL,
     "mood" TEXT NOT NULL,

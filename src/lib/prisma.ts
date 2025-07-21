@@ -10,4 +10,4 @@ if (process.env.NODE_ENV !== 'production') {
   global.db = db;
 }
 
-export default db;
+export { db };

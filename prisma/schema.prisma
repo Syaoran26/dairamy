@@ -14,7 +14,7 @@ datasource db {
 }
 
 model User {
-  id          String   @id @default(cuid())
+  id          String   @id @default(uuid()) @db.Uuid
   clerkUserId String   @unique
   email       String   @unique
   name        String
@@ -28,8 +28,8 @@ model User {
 }
 
 model Collection {
-  id          String   @id @default(cuid())
-  userId      String
+  id          String   @id @default(uuid()) @db.Uuid
+  userId      String   @db.Uuid
   name        String
   description String?
   createdAt   DateTime @default(now())
@@ -42,9 +42,9 @@ model Collection {
 }
 
 model Entry {
-  id           String   @id @default(cuid())
-  collectionId String?
-  userId       String
+  id           String   @id @default(uuid()) @db.Uuid
+  collectionId String?  @db.Uuid
+  userId       String   @db.Uuid
   title        String
   content      String   @db.Text
   mood         String
@@ -58,8 +58,8 @@ model Entry {
 }
 
 model Draft {
-  id        String   @id @default(cuid())
-  userId    String   @unique
+  id        String   @id @db.Uuid
+  userId    String   @unique @db.Uuid
   title     String
   content   String   @db.Text
   mood      String

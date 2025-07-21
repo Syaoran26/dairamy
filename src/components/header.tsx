@@ -20,7 +20,7 @@ const Header = () => {
       <div className="flex items-center gap-2">
         <SignedIn>
           <Button variant="outline" asChild>
-            <Link href="/trang-chu#bo-suu-tap">
+            <Link href="/bang-dieu-khien#bo-suu-tap">
               <FolderOpen className="size-4" />
               <span className="hidden md:inline">Bộ sưu tập</span>
             </Link>
